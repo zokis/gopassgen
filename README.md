@@ -10,10 +10,10 @@ import gpg "github.com/zokis/gopassgen"
 
 // ...
 
-newPass1 = gpg.NewPassword()
-newPass2 = gpg.NewPassword(gpg.OptionChars([]rune("ABCDFHJLNPRTVXZbdfhjlnprtvxz")))
-newPass3 = gpg.NewPassword(gpg.OptionLenght(15))
-newPass4 = gpg.NewPassword(gpg.OptionChars([]rune("ABCDFHJLNPRTVXZbdfhjlnprtvxz")), gpg.OptionLenght(15))
-newPass5 = gpg.NewPassword(gpg.OptionLenght(15), gpg.OptionChars([]rune("ABCDFHJLNPRTVXZbdfhjlnprtvxz")))
+np1 = gpg.NewPassword()
+np2 = gpg.NewPassword(gpg.OptionChars([]rune("ABCDEF...")))
+np3 = gpg.NewPassword(gpg.OptionLenght(15))
+np4 = gpg.NewPassword(gpg.OptionChars([]rune("ABCDEF...")), gpg.OptionLenght(15))
+np5 = gpg.NewPassword(gpg.OptionLenght(15), gpg.OptionChars([]rune("ABCDEF...")))
 
 ```
