@@ -3,7 +3,6 @@ package gopassgen
 import (
   "math/rand"
   "math"
-  "fmt"
 )
 
 const (
@@ -48,5 +47,5 @@ func NewPassword(options ...func(*NPParams) error) string {
     for i := range newPassword {
         newPassword[i] = p.chars[rand.Intn(len(p.chars))]
     }
-    return string(newPassword), nil
+    return string(newPassword)
 }
