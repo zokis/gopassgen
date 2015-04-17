@@ -3,6 +3,8 @@ package gopassgen
 import (
   "math/rand"
   "math"
+  "time"
+  "fmt"
 )
 
 const (
@@ -31,7 +33,15 @@ func OptionChars(c []rune) func(p *NPParams) error {
   }
 }
 
+func randInt(min int, max int) int {
+  rand.Seed( time.Now().UTC().UnixNano())
+  return min + rand.Intn(max - min)
+}
+
 func NewPassword(options ...func(*NPParams) error) string {
+
+    rand.Seed( time.Now().UTC().UnixNano())
+
     p := &NPParams{}
     p.chars = StdChars
     p.length = 15
@@ -45,7 +55,7 @@ func NewPassword(options ...func(*NPParams) error) string {
 
     newPassword := make([]rune, int(math.Min(math.Max(float64(p.length), minPasswordLength), maxPasswordLength)))
     for i := range newPassword {
-        newPassword[i] = p.chars[rand.Intn(len(p.chars))]
+        newPassword[i] = p.chars[randInt(0, len(p.chars))]
     }
-    return string(newPassword)
+    return string(newPassword), nil
 }
