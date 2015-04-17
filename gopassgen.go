@@ -1,4 +1,4 @@
-package main
+package geopassgen
 
 import (
   "math/rand"
