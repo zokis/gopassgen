@@ -4,7 +4,6 @@ import (
   "math/rand"
   "math"
   "time"
-  "fmt"
 )
 
 const (
@@ -57,5 +56,5 @@ func NewPassword(options ...func(*NPParams) error) string {
     for i := range newPassword {
         newPassword[i] = p.chars[randInt(0, len(p.chars))]
     }
-    return string(newPassword), nil
+    return string(newPassword)
 }
