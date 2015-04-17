@@ -1,5 +1,7 @@
 # Password Generator
 
+[![GoDoc](https://godoc.org/github.com/zokis/gopassgen?status.svg)](https://godoc.org/github.com/zokis/gopassgen)
+
 a simple application to generate passwords
 
 ```go
