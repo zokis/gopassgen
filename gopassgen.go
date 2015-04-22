@@ -1,4 +1,4 @@
-package geopassgen
+package gopassgen
 
 import (
   "math/rand"
@@ -37,7 +37,7 @@ func OptionChars(c []rune) func(p *NPParams) error {
 }
 
 func randInt(min int, max int) int {
-  rand.Seed( time.Now().UTC().UnixNano())
+  rand.Seed(time.Now().UTC().UnixNano())
   return min + rand.Intn(max - min)
 }
 
