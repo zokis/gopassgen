@@ -67,11 +67,9 @@ func TestChars(t *testing.T) {
 
   for _, test := range tests {
     for _, c := range []byte(test.pass) {
-      
       if strings.Contains(string(c), string(test.alphabet)) {
         t.Errorf("%s not in %s", c, test.alphabet)
       }
     }
   }
-
 }
