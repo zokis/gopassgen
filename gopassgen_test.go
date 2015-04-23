@@ -42,7 +42,7 @@ func TestLength(t *testing.T) {
 
   for _, test := range tests {
     if test.pLen != len(test.pass){
-      t.Errorf("Len Error %s != %s", test.pLen, len(test.pass))
+      t.Errorf("Len Error %d != %d", test.pLen, len(test.pass))
     }
   }
 }
