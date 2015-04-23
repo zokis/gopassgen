@@ -6,7 +6,7 @@ import "regexp"
 
 type TestLen struct {
   pass string
-  len_ int
+  pLen int
 }
 
 type TestChar struct {
