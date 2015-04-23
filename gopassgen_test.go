@@ -20,29 +20,29 @@ func TestLength(t *testing.T) {
   tests := []TestLen{
     TestLen{
       pass: NewPassword(),
-      len_: 15,
+      pLen: 15,
     },
     TestLen{
       pass: NewPassword(OptionChars([]rune("ABCDEF."))),
-      len_: 15,
+      pLen: 15,
     },
     TestLen{
       pass: NewPassword(OptionLength(16)),
-      len_: 16,
+      pLen: 16,
     },
     TestLen{
       pass: NewPassword(OptionChars([]rune("abcdef.")),OptionLength(17)),
-      len_: 17,
+      pLen: 17,
     },
     TestLen{
       pass: NewPassword(OptionLength(18), OptionChars([]rune("012345."))),
-      len_: 18,
+      pLen: 18,
     },
   }
 
   for _, test := range tests {
-    if test.len_ != len(test.pass){
-      t.Errorf("Len Error %s != %s", test.len_, len(test.pass))
+    if test.pLen != len(test.pass){
+      t.Errorf("Len Error %s != %s", test.pLen, len(test.pass))
     }
   }
 }
@@ -72,10 +72,10 @@ func TestChars(t *testing.T) {
   }
 
   for _, test := range tests {
-    alphabet_str := string(test.alphabet)
+    alphabetStr := string(test.alphabet)
     r, _ := regexp.Compile(test.re)
     if !r.MatchString(test.pass) {
-      t.Errorf("%s not match alphabet %s", test.pass, alphabet_str)
+      t.Errorf("%s not match alphabet %s", test.pass, alphabetStr)
     }
   }
 }
